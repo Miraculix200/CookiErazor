@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>CookieBlocker</title>
+<style>
+
+
+body
+{
+	background-color: #f9f9fa;
+}
+
+.menu-item:hover
+{
+	background-color: rgb(150,150,200);
+}
+
+.navigation {
+  width: 250px;
+}
+
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+.mainmenu a {
+  display: block;
+  background-color: #737373;
+  text-decoration: none;
+  padding: 10px;
+  color: #ededf0;
+}
+
+.submenu a {
+  background-color: #b1b1b3 ;
+  transition-duration: 0.25s;
+  color: #000;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: #45a1ff;
+  color: #f9f9fa;
+}
+
+.menu-link a:hover {
+	text-decoration: underline;
+}
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+  transition-duration: 0.25s;
+}
+
+.mainmenu li .submenu.open {
+  display: block;
+  max-height: 200px;
+    list-style: none;
+}
+
+.selection-icon {
+	background-color: rgb(12,12,12,0.01);
+	display: inline-block;
+	padding-right: 16px;
+	padding-left: 4px;
+	visibility: hidden;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+}
+
+.accept-menu
+{
+	display: none;
+}
+
+.popup-header
+{
+	font-size: 16px;
+}
+
+.header-host-value
+{
+	font-weight: 600;
+}
+
+.popup-header.small
+{
+	font-size: 12px;
+	color: #b1b1b3;
+	cursor: pointer;
+}
+
+.popup-header.small:hover
+{
+	text-decoration: underline;
+}
+
+.popup-header-container
+{
+	padding: 8px;
+}
+
+#keep-cookies,#manage-menu,#tools
+{
+	cursor: default;
+}
+
+#options:hover,#manager:hover,#log:hover
+{
+	text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container" id="container">
+
+	<div class="popup-header-container">
+		<div class="popup-header">
+			<span>Host: </span>
+			<span id="header-host-value" class="header-host-value">n/a</span>
+		</div>
+		<div class="popup-header small" id="cookie-count">
+			<span>Cookies: </span>
+			<span id="header-cookie-value">none</span>
+		</div>
+	</div>
+
+	<nav class="navigation">
+	  <ul class="mainmenu" id="menu-list">
+	    <li class="accept-menu" id="accept-menu">
+	      <a id="keep-cookies" href="#">Keep Cookies From This Site</a>
+	      <ul class="submenu open">
+	        <li title="Keep cookies for this site until manually deleted">
+	        	<a id="accept-permanent" href="#"><span class="selection-icon">✔️</span>Permanently</a>
+	        	
+	    	</li>
+	        <li  title="Keep cookies for this site until restarting the browser" id="accept-session">
+	        	<a id="accept-session"  href="#"><span class="selection-icon">✔️</span>Until Restart</a>
+        	</li>
+	        <li title="Keep cookies for this site until tab closes" id="accept-tab">
+	        	<a id="accept-tab"  href="#"><span class="selection-icon">✔️</span>Until Tab Closed</a>
+        	</li>
+	      </ul>
+	    </li>
+
+
+	    <li class="tools-menu" id="tools-menu">
+	      <a id="tools" href="#">Tools</a>
+	      <ul class="submenu open">
+		    <li><a title="Delete all session and tab cookies" id="trim" href="#">Trim Now</a></li>
+		    <li><a title="Manage cookies and permissions" id="manager" href="#">Manager</a></li>
+		    <li><a title="Change global settings" id="options" href="#">Global Settings</a></li>
+		    <li><a title="Show log of deleted cookies" id="log" href="#">Session Log</a></li>
+<!--
+		    <li><a id="dbg" href="#">DBG</a></li>
+-->
+	      </ul>
+	    </li>
+
+
+
+	  </ul>
+	</nav>
+</div>
+<script src="browser_action.js"></script>
+</body>
+</html>

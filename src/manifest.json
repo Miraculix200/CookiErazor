@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "CookiErazor",
+  "version": "1.0",
+  "description": "Enhance privacy by automatically deleting cookies when they're not needed anymore",
+  "homepage_url": "https://addons.mozilla.org/en-US/firefox/user/miraculix200/",
+  "icons": {
+    "48": "icons/cr.fw.png"
+  },  
+  "applications": {
+    "gecko": {
+      "id": "CookiErazor@example.org"
+   //   "strict_min_version": "55.0"
+    }
+  },
+
+  "permissions": [
+    "cookies",
+   "contextualIdentities",
+    "notifications",
+    "storage",
+    "webRequest",
+    "<all_urls>",
+    "tabs"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "options_ui": {
+    "page": "options/options.html"
+  },
+
+"browser_action": {
+  "browser_style": true,
+  "default_icon": {
+    "16": "icons/cr.fw.png",
+    "32": "icons/cr.fw.png"
+  },
+  "default_title": "CookiErazor",
+  "default_popup": "popup/browser_action.html"
+  }
+}

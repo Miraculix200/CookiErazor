@@ -1,0 +1,206 @@
+
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>CookiErazor</title>
+<link rel="stylesheet" href="/css/table_container.css">
+<link rel="stylesheet" href="/css/manager.css">
+
+</head>
+<body>
+	
+
+<div id="popup-container">
+	<div id="popup-background">
+
+		<div class="close-popup-button">
+		❌
+		</div>
+
+	</div>
+
+	<div class="popup">
+
+
+		<div class="popup-header">
+			<span>Second Level Domain:</span>
+			<span id="domain-name">loading...</span>
+
+		</div>
+
+		<div class="popup-body">
+			<div class="popup-row">
+
+				<div class="popup-cookie-list">
+					<table>
+						<tbody id="popup-cookie-table">
+
+							<tr><td>loading...</td></tr>
+
+						</tbody>
+					</table>
+				</div>
+
+				<div class="popup-cookie-infos">
+
+					<table>
+						<tbody>
+								
+							<tr>
+								<td>Name</td>
+								<td id="cookie-name" class="cookie-info-field">loading...</td>
+							</tr>
+
+							<tr>
+								<td>Domain</td>
+								<td id="cookie-domain">loading...</td>
+							</tr>
+							<tr>
+								<td>Path</td>
+								<td id="cookie-path">loading...</td>
+							</tr>
+
+							<tr>
+								<td>HostOnly</td>
+								<td id="cookie-hostOnly">loading...</td>
+							</tr>
+
+
+							<tr>
+								<td>HttpOnly</td>
+								<td id="cookie-httpOnly">loading...</td>
+							</tr>
+
+							<tr>
+								<td>Secure</td>
+								<td id="cookie-secure">loading...</td>
+							</tr>
+
+							<tr>
+								<td>Session</td>
+								<td id="cookie-session">loading...</td>
+							</tr>
+
+							<tr>
+								<td>Expiration Date</td>
+								<td id="cookie-date">loading...</td>
+							</tr>
+
+							<tr><td>Value</td></tr>
+
+							<tr><td id="cookie-value">loading...</td></tr>
+
+						</tbody>
+					</table>
+
+
+					<span id="delete-selected-cookie">
+						Delete Selected Cookie
+						<span style="padding-left: 4px; color: red;">❌</span>
+					</span>
+
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+<div class="page-container">
+
+	<div class="caption">Cookie and Permission Manager</div>
+
+	<div class="table-container cookies">
+
+		<div class="container-title">
+			<span>Cookiestore: </span>
+
+			<span id="cstore-selector-dropdown" class="store-name">
+				<ul class="selector-item">
+					<li class="selector-main">
+						<span id="store-button">
+							<span class="store-text" id="store-text">loading...</span>
+							<span>⚙️</span>
+						</span>
+						<ul class="selector-submenu" id="selector-submenu">
+
+							<li class="cstore-item">n/a</li>
+
+						</ul>
+
+
+					</li>
+				</ul>
+
+			</span>
+
+		</div>
+
+		<table>
+
+		  <thead>
+		    <tr>
+		      <th scope="col">Count</th>
+		      <th scope="col">Domain</th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody id="cookie-table-body">
+		    <tr id="cookie-row-cloneme" style="display: none;">
+		      <td class="cookie-counter">123</td>
+		      <th scope="row" type="cookie-domain">xxxx.xx</th>
+
+		      <td class="icon show-cookie" title="Show all cookies for this domain" type="cookie-show">🔍</td>
+		      
+		      <td class="icon delete-cookie" type="cookie-delete" title="Delete all cookies from this domain">❌</td>
+		    </tr>
+		  </tbody>
+
+		</table>
+
+	</div>
+
+	<div class="table-container perms">
+		<div class="container-title">
+			<span>Permissions</span>
+			<span class="file-buttons" id="file-buttons"> 
+				<span action="export" title="Export permissions to file">Export</span>
+				<span action="import" title="Import permissions from file">Import</span>
+			</span>
+		</div>
+
+		<table summary="CookiErazor">
+		  <thead>
+		    <tr>
+		      <th scope="col">Domain</th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody id="perms-table-body">
+		    <tr id="perms-row-cloneme" style="display: none;">
+		      <th scope="row">xyz.com</th>
+		      <td action="perm-permanent" class="icon perm-permanent" title="Keep cookies permanently"></td>
+		      <td action="perm-session" class="icon perm-session" title="Delete cookies on restart"></td>
+		      <td action="perm-tab" class="icon perm-tab" title="Delete cookies when tab closes">❌</td>
+
+		    </tr>
+
+		</table>
+
+	</div>
+
+
+</div>
+	
+<script src="manager.js"></script>
+
+
+
+</body>
+</html>

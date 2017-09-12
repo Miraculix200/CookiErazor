@@ -1,0 +1,41 @@
+
+tbody td, tbody th
+{
+	border-right: 1px dotted black;
+}
+
+tbody th:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.page-container
+{
+	height: 90%;
+}
+
+.log-container
+{
+	top: 44px;
+	height: 100%;
+     overflow-y: scroll;
+  overflow-x: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+.log-container thead th:nth-child(1) {
+  width: 15%;
+}
+
+.log-container thead th:nth-child(2) {
+  width: 20%;
+}
+
+.log-container thead th:nth-child(3) {
+  width: 30%;
+}
+
+.log-container thead th:nth-child(4) {
+  width: 25%;
+}

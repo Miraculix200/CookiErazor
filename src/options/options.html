@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+
+<style>
+
+body
+{
+   font-family: 'proxima-nova', 'helveticaneue-light', 'helvetica', sans-serif; 
+}
+
+.caption
+{
+  font-size: 24px;
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: absolute;
+  top: 0px;
+  height: 40px;
+  border-bottom: 1px dotted black;
+  letter-spacing: 3px;
+  color: #b1b1b3;
+}
+
+#page-container
+{
+  position: relative;
+  width: 700px;
+  height: 100%;
+  padding: 16px;
+  margin: 0 auto;
+  display: none;
+}
+
+.form-container
+{
+    padding: 16px;
+    border: 1px dotted black;
+    width: 100%;
+    background-color: #f9f9fa;
+    position: absolute;
+    top: 80px;
+    border: 1px dotted black;
+    border-radius: 8px;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+label {
+  padding-left: 16px;
+  font-size: 24px;
+}
+
+input, label {
+  cursor: pointer;
+}
+
+.description
+{
+  font-size: 20px;
+  padding-left: 20px;
+  color: #b1b1b3;
+}
+
+</style>
+
+
+</head>
+<body>
+
+  <div id="page-container">
+    <div class="caption">Settings</div>
+    <div class="form-container">
+      <form id="ce-form">
+        <table>
+          <tr>
+            <td>
+               <input type="checkbox" id="disable">
+            </td>
+            <td>
+              <label for="disable">
+                Disable Until Restart
+              </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td class="description">
+              Keep all cookies until the browser is restarted (treat all cookies like session cookies)
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+               <input type="checkbox" id="notifications">
+            </td>
+            <td>
+              <label for="notifications">
+                Show notifications
+              </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td class="description">
+              Show notifications when cookies trimming session cookies (depends on OS settings)
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+               <input type="checkbox" id="monitor">
+            </td>
+            <td>
+              <label for="monitor">
+                Trim All Cookie Stores
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="description">
+              When unchecked, only cookies in the default cookie store will be removed, while cookies in other cookie stores (e.g. Container Tabs) will be left untouched.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+               <input type="checkbox" id="strict">
+            </td>
+            <td>
+              <label for="strict">
+                Strict Removal
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="description">
+              Sometimes the source tab of a cookie can't be detected (e.g. cookie set by Javascript instead of the server). When disabled, cookies from unknown tabs will be kept until all currently open tabs are closed.
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <script src="options.js"></script>
+  </body>
+</html>
