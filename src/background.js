@@ -12,7 +12,7 @@ CookiErazor by gab.ai/miraculix
 /* ################################################################################################## */
 /* ################################################################################################## */
 
-const DEBUG = true;
+const DEBUG = false;
 
 var gDeleteCookiesAllStores = true;
 var gDisableUntilRestart = false;
